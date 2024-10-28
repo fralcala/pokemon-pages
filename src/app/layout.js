@@ -1,4 +1,6 @@
 import "./globals.css";
+import Nav from "@/components/Nav";
+import { PokemonProvider } from "@/hooks/usePokemonApi";
 
 export const metadata = {
   title: "Create Next App",
@@ -8,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <PokemonProvider>
+          <Nav />
+          {children}
+        </PokemonProvider>
+      </body>
     </html>
   );
 }
