@@ -1,16 +1,9 @@
 .mainNav {
-  height: 12vh;
-  width: 100%;
+  height: 60px;
   background-color: #c391ec;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.mainNav ul {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
 }
 
 .mainNav li {

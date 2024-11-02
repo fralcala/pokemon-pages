@@ -3,8 +3,8 @@ import navStyles from "./nav.module.css";
 
 export default function Nav() {
   return (
-    <nav className={navStyles.mainNav}>
-      <ul>
+    <nav>
+      <ul className={navStyles.mainNav}>
         <li>
           <Link href="/">Home</Link>
         </li>

@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.main input {
+  width: 500px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 1em;
+  font-size: 20px;
+  border: 2px black solid;
+  margin-bottom: 50px;
+}
+
+.main .searchBtn {
+  margin-left: 1em;
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px black solid;
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+}
