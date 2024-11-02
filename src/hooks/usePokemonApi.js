@@ -92,9 +92,51 @@ export function PokemonProvider({ children }) {
   };
 
   //egg group
-  async function getEggGroup(id) {
-    const pokeResponse = await fetch(`https://pokeapi.co/api/v2/egg-group`);
+  async function getEggGroup(name) {
+    const pokeResponse = await fetch(
+      `https://pokeapi.co/api/v2/egg-group/${name}`
+    );
+
+    //
+    const { pokemon } = await pokeResponse.json();
+    setPokemonState({
+      ...pokemonState,
+      eggGroup: pokemon,
+    });
   }
+  // ignore///////
+  // const [eggGroupPokemon, setEggGroupPokemon] = useState(null);
+  // async function fetchEggGroup(name) {
+  // try {
+  // const pokeResponse = await fetch(
+  //   `https://pokeapi.co/api/v2/egg-group/${name}`
+  // );
+
+  //
+  // const pokemon = await pokeResponse.json();
+  // setPokemonState({
+  //   ...pokemonState,
+  //   eggGroup: pokemon,
+  // });
+  //   setEggGroupPokemon({
+  //     name: pokemon.name,
+  //     img: pokemon.sprites.front_default,
+  //     types: pokemon.types,
+  //   });
+  // } catch (error) {
+  //   console.error("Error fetching Pokémon:", error);
+  //   setEggGroupPokemon(null);
+  // }
+  // }
+  // function getEggGroup(pokemon) {
+  //   return {
+  //     name: pokemon.name,
+  //     id: pokemon.id,
+  //     img: pokemon.sprites.front_default,
+  //     types: pokemon.types,
+  //   };
+  // }
+  ///////
 
   const pokemonValues = {
     ...pokemonState,
@@ -106,6 +148,7 @@ export function PokemonProvider({ children }) {
     removeFavorite,
     singlePokemon,
     fetchPokemonByName,
+    getEggGroup,
   };
 
   return (

@@ -6,7 +6,7 @@ import usePokemonApi from "@/hooks/usePokemonApi";
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
-  const { singlePokemon, fetchPokemonByName } = usePokemonApi();
+  const { singlePokemon, fetchPokemonByName, getEggGroup } = usePokemonApi();
 
   function changeSearchTerm(e) {
     setSearchTerm(e.currentTarget.value.toLowerCase());
@@ -14,6 +14,7 @@ export default function Search() {
 
   const handleSearch = () => {
     fetchPokemonByName(searchTerm);
+    // getEggGroup(searchTerm);
   };
 
   return (
